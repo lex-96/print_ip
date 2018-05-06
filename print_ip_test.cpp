@@ -2,7 +2,7 @@
 #include <boost/test/included/unit_test.hpp>
 #include <sstream>
 
-#include "my_type_traits.h"
+#include "is_stl_container.h"
 #include "print_ip.h"
 
 
