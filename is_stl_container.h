@@ -51,7 +51,7 @@ namespace is_stl_container_impl{
 \brief type trait to utilize the implementation type traits as well as decay the type
 */
 template <typename T> struct is_stl_container {
-  static constexpr bool const value = is_stl_container_impl::is_stl_container<std::decay_t<T>>::value;
+  static constexpr bool const value = is_stl_container_impl::is_stl_container<std::decay<T>::type>::value;
 };
 
 /*!
@@ -64,5 +64,5 @@ constexpr bool is_integral_v = std::is_integral<T>::value;
 \brief Metafunctions for short recording is_stl_containet
 */
 template<typename T>
-constexpr bool is_stl_container_v = is_stl_container<std::decay_t<T>>::value;
+constexpr bool is_stl_container_v = is_stl_container<std::decay<T>::type>::value;
 
