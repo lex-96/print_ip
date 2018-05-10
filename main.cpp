@@ -18,13 +18,21 @@
 
 int main()
 {
-    print_ip(char(-1), std::cout);
-    print_ip(short(0), std::cout);
-    print_ip(int(2130706433), std::cout);
-    print_ip(long(8875824491850138409), std::cout);
-    print_ip(std::string{"144.23.45.67"}, std::cout);
-    print_ip(std::vector<int>{117, 28, 235,143}, std::cout);
-    print_ip(std::list<int>{17, 46, 250, 98}, std::cout);
+    try
+    {
+        print_ip(char(-1), std::cout);
+        print_ip(short(0), std::cout);
+        print_ip(int(2130706433), std::cout);
+        print_ip(long(8875824491850138409), std::cout);
+        print_ip(std::string{"144.23.45.67"}, std::cout);
+        print_ip(std::vector<int>{117, 28, 235,143}, std::cout);
+        print_ip(std::list<int>{17, 46, 250, 98}, std::cout);
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
     return 0;
 }
 
